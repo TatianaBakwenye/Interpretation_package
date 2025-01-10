@@ -1,7 +1,12 @@
 # Interpretation_package
 
 ## Overview
-The interpretation_package is a repository designed for generating plots based on the SHAP and shapley packages for model results interpretation. It is divided into two main sections: interpretation and interpretation_time. Each section contains scripts, data, models, and visualizations aimed at providing insights into data interpretation both statically and over time.
+The interpretation_package is a repository designed for generating plots based on the SHAP and shapley packages for model results interpretation. It is divided into two main sections: interpretation and interpretation_time. Each section contains scripts, data, models, and visualizations.
+
+## Folder Descriptions
+- data/: Synthetically created datasets used for testing purposes. 
+- models/: These folders contain synthetic models that are used alongside the data to test interpretation functions.
+- visualization/: This folder stores all generated visual outputs after running the execute_interpretation.py and execute_interpretation_time.py scripts.
 
 ## Directory Structure
 ### 1. interpretation
@@ -15,14 +20,14 @@ interpretation/
 │
 ├── visualization/               # Contains plots generated after running execute scripts
 │
-├── interpretation.py            # Main script defining interpretation classes and functions
+├── interpretation.py            # Main script defining interpretation classes and methods
 │
-└── execute_interpretation.py    # Script to execute classes and functions from interpretation.py with syntheric data and models
+└── execute_interpretation.py    # Script to execute classes and methods from interpretation.py with syntheric data and models
 ```
 #### Key Components
 - PlotConfig: Configures plot settings (e.g., font and output path).
-- DataLoader: Loads data from CSV files for features (X) and target labels (y). Note that feature files should start with X_ and target files with y_. Data for regression should contain 'reg' in its name, and data for classification should contain 'clf'.
-- ModelLoader: Loads pre-trained models from .pkl files. Note that regression models should contain 'reg' in their name, and classification models should contain 'clf'.
+- DataLoader: Loads data from CSV files for features (X) and target labels (y). **Note that feature files should start with X_ and target files with y_. Data for regression should contain 'reg' in its name, and data for classification should contain 'clf'.**
+- ModelLoader: Loads pre-trained models from .pkl files. **Note that regression models should contain 'reg' in their name, and classification models should contain 'clf'.**
 - ShapVisualizer: Generates SHAP-based visualizations, including force plots, scatter plots for individual feature importance, and overall feature importance plots.
 
 #### Arguments Explanation:
@@ -75,16 +80,16 @@ interpretation_over_time/
 │
 ├── visualization/               # Contains plots generated after running execute scripts
 │
-├── interpretation_time.py  # Main script defining classes and functions for interpretation over time
+├── interpretation_time.py  # Main script defining classes and methods for interpretation over time
 │
-└── execute_interpretation_time.py  # Script to execute classes and functions from interpretation_over_time.py with synthetic data
+└── execute_interpretation_time.py  # Script to execute classes and methods from interpretation_over_time.py with synthetic data
 ```
 #### Key Components:
 - ShapleyFeaturePlot: Generates and saves Shapley feature importance plots, both for all data points and for specific individual observations (id values).
 - 
 #### Arguments Explanation:
 #### ShapleyFeaturePlot Class:
-- df_shap (DataFrame): A pandas DataFrame containing Shapley values for each feature. The rows represent observations, and the columns represent features. The Shapley values indicate the contribution of each feature to the model's predictions. Note that the date column should be transformed into the index column.
+- df_shap (DataFrame): A pandas DataFrame containing Shapley values for each feature. The rows represent observations, and the columns represent features. The Shapley values indicate the contribution of each feature to the model's predictions. **Note that the date column should be transformed into the index column.**
 - id_column (str): The name of the column containing unique identifiers (e.g., 'id') for the observations in df_shap.
 ##### Methods:
 ###### _plot_shapley(): This method generates a Shapley feature importance plot based on the Shapley values for the features of the dataset over time. It visualizes the contribution of each feature to the model's prediction, breaking it down into positive and negative contributions.
@@ -93,11 +98,6 @@ interpretation_over_time/
 ###### plot_main(): Generates and saves a main Shapley feature importance plot for all observations in the provided dataset (df_shap).
 ###### plot_for_id(): This method filters df_shap to include only the specified observation and then generates and saves the corresponding Shapley feature importance plot for that particular id_value.
 - id_value (str or int): The unique identifier (from the id_column) for a specific observation whose Shapley feature importance plot will be generated.
-
-## Folder Descriptions
-- data/: Synthetically created datasets used for testing purposes. These datasets are structured to simulate real-world data for better interpretation.
-- models/: These folders contain synthetic models that are used alongside the data to test interpretation functions.
-- visualization/: This folder stores all generated visual outputs after running the execute_interpretation.py and execute_interpretation_time.py scripts.
 
 ## License
 This project is licensed under the MIT License. See the LICENSE file for more information.
