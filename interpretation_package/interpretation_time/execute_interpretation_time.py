@@ -1,4 +1,4 @@
-from interpretation_time import ShapleyFeaturePlot
+from interpretation_package import ShapleyFeaturePlot
 import random
 import pandas as pd
 

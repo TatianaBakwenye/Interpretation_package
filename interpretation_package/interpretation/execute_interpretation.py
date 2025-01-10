@@ -1,4 +1,4 @@
-from interpretation import PlotConfig, DataLoader, ModelLoader, ShapVisualizer
+from interpretation_package import PlotConfig, DataLoader, ModelLoader, ShapVisualizer
 
 # Initialize the plot configuration, data loader, model loader, and SHAP visualizer
 plot_config = PlotConfig()
