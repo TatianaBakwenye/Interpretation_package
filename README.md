@@ -1,7 +1,7 @@
 # Interpretation_package
 
 ## Overview
-The interpretation_package is a repository designed for generating plots based on the SHAP and shapley packages for model results interpretation. It is divided into two main sections: interpretation and interpretation_time. Each section contains scripts, data, models, and visualizations.
+The interpretation_package is a Python package designed to generate plots based on SHAP and Shapley values for interpreting model results. It is divided into two main sections: interpretation and interpretation_time. Each section contains scripts, data, models, and visualizations.
 
 ## Folder Descriptions
 - data: Synthetically created datasets used for testing purposes. 
