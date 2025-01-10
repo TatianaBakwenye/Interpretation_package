@@ -25,7 +25,7 @@ interpretation/
 - ModelLoader: Loads pre-trained models from .pkl files. Note that regression models should contain 'reg' in their name, and classification models should contain 'clf'.
 - ShapVisualizer: Generates SHAP-based visualizations, including force plots, scatter plots for individual feature importance, and overall feature importance plots.
 
-### Arguments Explanation:
+#### Arguments Explanation:
 #### PlotConfig Class:
 - output_path (str): The folder path where the generated plots will be saved. Default is ./visualization.
 #### DataLoader Class:
@@ -83,7 +83,7 @@ interpretation_over_time/
 - ShapleyFeaturePlot: Generates and saves Shapley feature importance plots, both for all data points and for specific individual observations (id values).
 - 
 #### Arguments Explanation:
-##### ShapleyFeaturePlot Class:
+#### ShapleyFeaturePlot Class:
 - df_shap (DataFrame): A pandas DataFrame containing Shapley values for each feature. The rows represent observations, and the columns represent features. The Shapley values indicate the contribution of each feature to the model's predictions. Note that the date column should be transformed into the index column.
 - id_column (str): The name of the column containing unique identifiers (e.g., 'id') for the observations in df_shap.
 ##### Methods:
